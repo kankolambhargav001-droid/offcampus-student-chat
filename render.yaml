@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: offcampus-backend
+    runtime: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    plan: free
+    healthCheckPath: /api/health
+    region: singapore

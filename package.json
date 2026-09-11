@@ -1,0 +1,15 @@
+{
+  "name": "offcampus",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && npm --prefix client install && npm --prefix server install",
+    "dev": "concurrently \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "build": "npm --prefix client run build",
+    "start": "npm --prefix server start",
+    "build:client": "npm --prefix client run build",
+    "firebase:deploy": "npm run build:client && firebase deploy --only hosting"
+  },
+  "devDependencies": {
+    "concurrently": "latest"
+  }
+}
