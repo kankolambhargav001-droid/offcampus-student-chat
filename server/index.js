@@ -323,7 +323,7 @@ app.put("/api/admin/settings", requireAdmin, async (req, res) => {
     await firestore.collection("offcampus_config").doc("accessSchedule").set({
       ...nextSchedule,
       updatedAt: admin.firestore.FieldValue.serverTimestamp(),
-      updatedBy: _req.admin.email,
+      updatedBy: req.admin.email,
     }, { merge: true });
 
     schedule = nextSchedule;
